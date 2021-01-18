@@ -1,0 +1,32 @@
+<div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col"> <h3>Nombre</h3> </th>
+          <th scope="col"> <h3>Autor</h3> </th>
+          <th scope="col"> <h3>Editorial</h3> </th>
+          <th scope="col"> <h3>Paginas</h3> </th>
+          <th scope="col-sm-10"> <h3>Genero</h3> </th>
+          <th scope="col"> <h3>Fecha </h3> </th>
+          <th> <h3>Movimientos</h3></th>
+        </tr>
+      </thead>
+      <tbody>
+        <br>
+        <tr class="table-Active" *ngFor="let item of libros$ | async">
+          <th scope="row"><h5> {{ item.titulo }} </h5> </th>
+          <td><h5>{{ item.autor }}</h5></td>
+          <td><h5>{{ item.editorial }}</h5></td>
+          <td><h5>{{ item.pag }}</h5></td>
+          <td><h5>{{ item.sinopsis }}</h5></td>
+          <td><h5>{{ item.startDate }}</h5></td>
+          <td class="" role="group">
+            <button type="button" class="btn btn-primary m-1" (click)="editarLibro(item)">Editar</button>
+            <button type="button" class="btn btn-success m-1" (click)="verLibro(item)">Ver</button>
+            <button type="button" class="btn btn-danger m-1" (click)="eliminarLibro(item.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>

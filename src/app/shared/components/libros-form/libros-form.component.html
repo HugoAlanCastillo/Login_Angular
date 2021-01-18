@@ -1,0 +1,115 @@
+
+
+<div class="card-navbar mb-0">
+  <div class="col-md-10 mx-auto mt-8">
+ 
+      <div class="card-body">
+       <br>
+        <h1 class="text-center">Ingresa tu libro</h1>
+<form class="mt-1 col-md-8 offset-md-2" (ngSubmit)="onSave()" [formGroup]="librosForm">
+    
+  <div class="form-row">
+        <div class="form-group col-md-6">
+          <input type="text" class="form-control" placeholder="Titulo" formControlName="titulo" [class]="isValidField('titulo')">
+          <div class="invalid-feedback">
+            <span *ngIf="librosForm.get('titulo').errors?.required">
+              ¡ERROR!, Este campo es requerido.
+            </span>
+          </div>
+        </div>
+    
+        <div class="form-group col-md-6">
+          <input type="text" class="form-control" placeholder="Autor" formControlName="autor"
+            [class]="isValidField('autor')">
+          <div class="invalid-feedback">
+            <span *ngIf="librosForm.get('autor').errors?.required">
+              ¡ERROR!, Este campo es requerido.
+            </span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <input type="text" class="form-control" placeholder="Editorial" formControlName="editorial"
+            [class]="isValidField('editorial')">
+          <div class="invalid-feedback">
+            <span *ngIf="librosForm.get('editorial').errors?.required">
+              ¡ERROR!, Este campo es requerido.
+            </span>
+          </div>
+        </div>
+       
+        <div class="form-group col-md-6">
+          <input type="text" class="form-control" placeholder="Numero de Paginas" 
+          formControlName="pag"
+            [class]="isValidField('pag')">
+          <div class="invalid-feedback">
+            <span *ngIf="librosForm.get('pag').errors?.required">
+              ¡ERROR!, Este campo es requerido.
+            </span>
+          </div>
+        </div>
+      </div>
+  
+  
+  <!--  <div class="form-row">
+        <div class="form-group col-md-6">
+            <input type="text" class="form-control" id="sinopsis" rows="3" placeholder="Genero" formControlName="sinopsis"
+            [class]="isValidField('sinopsis')">
+          <div class="invalid-feedback">
+            <span *ngIf="librosForm.get('sinopsis').errors?.required">
+              ¡ERROR!, Este campo es requerido.
+            </span>
+          </div>
+        </div>-->
+  
+       <div class="form-row">
+          <div class="form-group col-md-6">
+          <select type="text" class="form-control" id="sinopsis" rows="3" placeholder="Genero" 
+          formControlName="sinopsis"
+          [class]="isValidField('sinopsis')">
+          <option value=""> --Genero-- </option>
+            <option>Romántica</option>
+            <option>Obra literaria / Novela</option>
+            <option>Terror / misterio</option>
+            <option>Poesía</option>
+            <option>Cuento</option>
+            <option>Ciencia Ficción</option>
+            <option>Aventuras</option>
+            <option>Policíacas / Politica </option>
+            <option>Humor</option>
+            <option>Teatro</option>
+            <option>Informativo</option>
+          </select>
+          <div class="invalid-feedback">
+            <span *ngIf="librosForm.get('sinopsis').errors?.required">
+              ¡ERROR!, Este campo es requerido.
+            </span>
+            <label for="sinopsis">Genero</label>
+        </div>
+      </div>
+ 
+        <div class="form-group col-md-6">
+          <input type="text" class="form-control" placeholder="Fecha Inicio: 01/02/2021" formControlName="startDate"
+            [class]="isValidField('startDate')">
+          <div class="invalid-feedback">
+            <span *ngIf="librosForm.get('startDate').errors?.required">
+              ¡ERROR!, Este campo es requerido.
+            </span>
+          </div>
+        </div>
+      </div>
+        
+      
+      <button type="submit" class="btn bg-dark  text-center m-1">Guardar</button>    
+      <button type="button" class="btn bg-dark  text-light m-1" (click)="regresarLista()">Regresar</button>
+      <button type="button" class="btn bg-dark  text-light m-1" (click)="regresarInicio()">Inicio</button>
+    
+    </form>
+    
+  </div>
+</div>
+
+  
+    

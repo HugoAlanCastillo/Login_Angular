@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "login-lib-57dba": {
+      "hosting": {
+        "librosLogin": [
+          "login-lib-57dba"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+
+<div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+      <div class="card">
+        <div class="card-body">
+          
+          <h1 class="text-center mt-0">
+            <img src="assets/login.png"width="40" height="40" alt=""> LOGIN</h1>
+          <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <div class="form-group">
+              <label for="email">Ingresar Email</label>
+              <input type="email" class="form-control" formControlName="email" />
+            </div>
+            <div class="form-group">
+              <label for="password">Ingresar Password</label>
+              <input type="password" class="form-control"  formControlName="password"/>
+            </div>
+            <br>
+           
+            <button class="btn btn-primary btn-lg btn-block">
+              Acceder
+            </button>
+            
+          </form>
+          <div class="form-group mt-3">
+            <div class="form-group mt-3 text-center">
+              <p>
+                <a [routerLink]="['/forgot-password']"> ¿Has olvidado la contraseña? </a>
+              </p>
+            </div>
+
+          </div>
+          <div class="form-group text-center mt-3">
+            <p>
+              ¿Quieres crear una cuenta? <a [routerLink]="['/register']"> Register </a>
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>

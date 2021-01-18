@@ -1,0 +1,37 @@
+<div class="card mt-2">
+    <div class="card-header">
+     <h2>DETALLES DEL LIBRO </h2>
+    </div>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+       
+        <h4>  <li class="list-group-item">
+          Titulo: <h5 class="text-muted">{{ libros.titulo }} </h5>
+        </li></h4>
+      <h4>  <li class="list-group-item">
+          Autor: <h5 class="text-muted"> {{ libros.autor }} </h5>
+        </li></h4>
+       
+        <h4>  <li class="list-group-item">
+          Editorial: <h5 class="text-muted">{{ libros.editorial }}</h5>
+        </li></h4>
+        <h4>    <li class="list-group-item">
+          No° Paginas: <h5 class="text-muted">{{ libros.pag }}</h5>
+        </li></h4>
+  
+        <h4>     <li class="list-group-item">
+          Sinopsis: <h5 class="text-muted">{{ libros.sinopsis }}</h5>
+        </li></h4>
+      </ul>
+      <h4>   <li class="list-group-item">
+        Fecha: <h5 class="text-muted">{{ libros.startDate }}</h5>
+      </li></h4>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-primary m-1 btn-sm" (click)="verLibro()">Editar</button>
+      <button type="button" class="btn btn-danger m-1" (click)="eliminarLibro()">Eliminar</button>
+    </div>
+  </div>
+  <button type="button" class="btn btn-secondary m-1" (click)="regresarLista()">Regresar</button>
+  
+  

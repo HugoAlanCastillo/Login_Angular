@@ -1,0 +1,53 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" >
+  <a class="navbar-brand"[routerLink]="['/home']">
+    <img src="assets/libro.png"  width="60" height="60" alt=""> </a>  
+    <a class="navbar-brand mt-20" routerLink="/home"> <h2>Mis Libros  ⠀</h2></a>
+  
+  
+  <div class="collapse navbar-collapse" id="navbarColor03">
+     
+    <ul class="navbar-nav mr-auto">
+        <img src="assets/librocerebro.png"  width="25" height="25" alt="">
+      <h5><li class="nav-item  mt-0">
+        <a class="nav-link" routerLink="/">Inicio⠀⠀</a>
+    </li></h5>
+    
+    
+    <img src="assets/contenido.png"  width="25" height="25" alt="">
+    <h5> <li class="nav-item  mt-0">
+      <a class="nav-link" routerLink="/list">Contenido Libros⠀⠀</a>
+  </li></h5>
+
+<img src="assets/ingresar.png"  width="25" height="25" alt="">
+      <h5><li class="nav-item mt-0 ">
+        <a class="nav-link " routerLink="/new">Ingresar Libros</a>
+    </li></h5>
+
+    </ul>
+      <ul class="navbar-nav mx-auto" *ngIf="user$ | async as user; else login">
+        <img src="assets/salir.png"  width="30" height="30" alt="">
+        <h4> <li class="nav-item" *ngIf="user">
+              <a href="#" class="nav-link text-danger" (click)="onLogout()">Salir ⠀⠀</a>
+          </li></h4>
+          <img src="assets/registro2.png"  width="30" height="30" alt="">
+          <h4> <li class="nav-item">
+              <a class="nav-link">Usuario:  {{ user?.email }}</a>
+          </li></h4>
+      </ul>
+        
+          <ng-template #login>
+              <ul class="navbar-nav mx-auto">
+                <img src="assets/cuenta.png"  width="30" height="30" alt="">
+              <h4><li class="nav-item">
+                <a class="nav-link" routerLink="/login">Iniciar  </a>
+            </li></h4>  
+           
+            <img src="assets/registro1.png"  width="31" height="31" alt="">
+            <h4><li class="nav-item">  
+              <a class="nav-link" routerLink="/register">  Registrar</a>
+          </li></h4>
+    </ul>
+          </ng-template>
+     </div>
+  </nav>
